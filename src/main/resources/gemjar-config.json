@@ -1,0 +1,21 @@
+{
+  "environment": "beta",
+  "projectName": "GEMECO-API-JV-BDD",
+  "reportName": "GemJar UI Sample Report",
+  "gemjarUserName": "pdeep",
+  "gemjarToken":"76f1021f-0ce5-45b6-af17-df2c36d9b11c1669200156981",
+  "glueCode":"StepDefination",
+  "gemjarSubID": "test_id",
+  "reportLocation": "/tmp",
+  "remoteDriverUrl" : "http://20.219.41.21:4444/wd/hub",
+  "dev": {
+    "browserName": "chrome",
+    "launchUrl": "https://jewel.gemecosystem.com/",
+    "browserTimeout": 100
+  },
+  "beta": {
+    "browserName": "grid",
+    "launchUrl": "https://jewel.gemecosystem.com/",
+    "browserTimeout": 100
+  }
+}
