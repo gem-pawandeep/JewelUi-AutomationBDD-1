@@ -18,7 +18,7 @@ import java.net.URL;
 public class Jewel {
     @Before
     public void start() throws GemException, MalformedURLException {
-        if (GemJarGlobalVar.browserInTest.equals("grid")) {
+        /*if (GemJarGlobalVar.browserInTest.equals("grid")) {
             String remoteURL = GemJarUtils.getGemJarKeyValue("remoteDriverUrl");
             ChromeOptions options = new ChromeOptions();
             options.setHeadless(true);
@@ -37,6 +37,8 @@ public class Jewel {
         } else {
             DriverManager.setUpBrowser();
             DriverAction.setBrowserSize(1296,696);
-        }
+        }*/
+        DriverManager.setUpBrowser();
+
     }
 }
