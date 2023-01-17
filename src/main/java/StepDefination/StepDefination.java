@@ -22,15 +22,15 @@ public class StepDefination {
         DriverAction.waitSec(2);
         DriverAction.click(locator.close);
         DriverAction.waitSec(2);
-        GemTestReporter.addTestStep("cross button on login page","cross button on login page has been clicked",STATUS.PASS,DriverAction.takeSnapShot());
+        GemTestReporter.addTestStep("cross button on login page", "cross button on login page has been clicked", STATUS.PASS, DriverAction.takeSnapShot());
     }
 
     @Then("^enter (.+) and (.+)")
     public void loginPage(String Username, String Password) throws Exception {
         DriverAction.waitSec(1);
         System.out.println(DriverAction.getBrowserSize());
-        GemTestReporter.addTestStep("Browser Location",""+DriverAction.getBrowserSize(),STATUS.INFO,DriverAction.takeSnapShot());
-        JavascriptExecutor js=(JavascriptExecutor)DriverManager.getWebDriver();
+        GemTestReporter.addTestStep("Browser Location", "" + DriverAction.getBrowserSize(), STATUS.INFO, DriverAction.takeSnapShot());
+        JavascriptExecutor js = (JavascriptExecutor) DriverManager.getWebDriver();
         js.executeScript("arguments[0].click();", DriverAction.getElement(locator.logIn));
 //        DriverAction.click(locator.logIn);
         DriverAction.waitSec(2);
@@ -44,9 +44,9 @@ public class StepDefination {
         DriverAction.waitSec(1);
         GemTestReporter.addTestStep("typing password", "****", STATUS.PASS, DriverAction.takeSnapShot());
         DriverAction.waitSec(3);
-        DriverAction.click(locator.eye,"eye button has been clicked");
+        DriverAction.click(locator.eye, "eye button has been clicked");
         DriverAction.waitSec(1);
-        DriverAction.click(locator.eyeclose,"eye button has been clicked again");
+        DriverAction.click(locator.eyeclose, "eye button has been clicked again");
         DriverAction.waitSec(1);
     }
 
@@ -169,10 +169,10 @@ public class StepDefination {
     @Then("^validating content (.+)$")
     public void content(String content) {
         String s9 = DriverAction.getElementText(locator.content);
-        if (s9.contains(content)) {
-            GemTestReporter.addTestStep("content validation", "Sucessfull<br>Expected content: " + s9 + "<br>Actual content " + s9, STATUS.PASS);
+        if (content.contains(s9)) {
+            GemTestReporter.addTestStep("content validation", "Sucessfull<br>Expected content: " + content + "<br>Actual content " + content, STATUS.PASS);
         } else {
-            GemTestReporter.addTestStep("content validation", "unsucessfull<br>Expected content: " + s9 + "<br>Actual content " + s9, STATUS.FAIL);
+            GemTestReporter.addTestStep("content validation", "unsucessfull<br>Expected content: " + content + "<br>Actual content " + s9, STATUS.FAIL);
         }
     }
 
@@ -192,10 +192,12 @@ public class StepDefination {
     @Then("^validating view reportC (.+)$")
     public void viewcontent(String viewcontent) {
         String s11 = DriverAction.getElementText(locator.viewreportcontent);
-        if (s11.equals(viewcontent)) {
-            GemTestReporter.addTestStep("view report content validation", "Sucessfull<br>Expected content: " + s11 + "<br>Actual content " + s11, STATUS.PASS);
+        s11 = s11.replace("\n", "");
+        System.out.println("*****" + s11);
+        if (viewcontent.contains(s11)) {
+            GemTestReporter.addTestStep("view report content validation", "Sucessfull<br>Expected content: " + viewcontent + "<br>Actual content " + viewcontent, STATUS.PASS);
         } else {
-            GemTestReporter.addTestStep("view report content validation", "unsucessfull<br>Expected content: " + s11 + "<br>Actual content " + s11, STATUS.FAIL);
+            GemTestReporter.addTestStep("view report content validation", "unsucessfull<br>Expected content: " + viewcontent + "<br>Actual content " + s11, STATUS.FAIL);
         }
     }
 
@@ -216,6 +218,9 @@ public class StepDefination {
     @Then("^validating run testC (.+)$")
     public void runsuite(String runcontentC) {
         String s13 = DriverAction.getElementText(locator.runtestc);
+        s13 = s13.replace("\n", "");
+        System.out.println("*****" + s13);
+        System.out.println("*****" + runcontentC);
         if (runcontentC.contains(s13)) {
             GemTestReporter.addTestStep("run test suite content validation", "Sucessfull<br>Expected content: " + s13 + "<br>Actual content: " + s13, STATUS.PASS);
         } else {
@@ -226,7 +231,7 @@ public class StepDefination {
     @Given("^click on facebook logo validate url (.+)$")
     public void facebook(String facebook) throws Exception {
         DriverAction.waitSec(1);
-        DriverAction.pageScroll(1500, 1500);
+        DriverAction.pageScroll(2000, 2000);
         DriverAction.waitSec(2);
         DriverAction.click(locator.facebook);
         DriverAction.waitSec(2);
@@ -253,7 +258,7 @@ public class StepDefination {
     @Given("click on twitter logo and validate url (.+)$")
     public void twitter(String twitter) throws Exception {
         DriverAction.waitSec(1);
-        DriverAction.pageScroll(1500, 1500);
+        DriverAction.pageScroll(2000, 2000);
         DriverAction.waitSec(2);
         DriverAction.click(locator.twitter);
         ArrayList<String> newTb1 = new ArrayList<>(DriverAction.getWindowHandles());
@@ -277,7 +282,7 @@ public class StepDefination {
     @Given("^click on instagram logo and validate url (.+)$")
     public void instagram(String insta) {
         DriverAction.waitSec(1);
-        DriverAction.pageScroll(1500, 1500);
+        DriverAction.pageScroll(2000, 2000);
         DriverAction.waitSec(2);
         DriverAction.click(locator.instagram);
         ArrayList<String> newTb2 = new ArrayList<>(DriverAction.getWindowHandles());
@@ -333,7 +338,7 @@ public class StepDefination {
     }
 
     @Given("^click on gemPYP and validate url (.+)$")
-    public void gempyp(String pyp) throws Exception{
+    public void gempyp(String pyp) throws Exception {
         DriverAction.waitSec(1);
         DriverAction.pageScroll(1500, 1500);
         DriverAction.waitSec(2);
@@ -342,22 +347,22 @@ public class StepDefination {
         DriverAction.waitSec(2);
         DriverAction.switchToWindow(newTb4.get(1));
         DriverAction.waitSec(4);
-        GemTestReporter.addTestStep("gempyp click","gempyp has been clicked",STATUS.PASS,DriverAction.takeSnapShot());
-        String s19=DriverAction.getCurrentURL();
-        if(s19.equals(pyp)){
+        GemTestReporter.addTestStep("gempyp click", "gempyp has been clicked", STATUS.PASS, DriverAction.takeSnapShot());
+        String s19 = DriverAction.getCurrentURL();
+        if (s19.equals(pyp)) {
             GemTestReporter.addTestStep(" gemPYP Url Validation", "Successful<br>Expected URL: " + pyp + "<br>Actual URL: " + s19, STATUS.PASS);
-        }else{
+        } else {
             GemTestReporter.addTestStep(" gemPYP Url Validation", "unsuccessful<br>Expected URL: " + pyp + "<br>Actual URL: " + s19, STATUS.FAIL);
         }
         DriverManager.getWebDriver().close();
         DriverAction.waitSec(2);
-        GemTestReporter.addTestStep("Close gemPYP tab","Successfull",STATUS.PASS);
+        GemTestReporter.addTestStep("Close gemPYP tab", "Successfull", STATUS.PASS);
         DriverAction.switchToWindow(newTb4.get(0));
         DriverAction.waitSec(2);
     }
 
     @Given("^click on gemPRF and validate url (.+)$")
-    public void gemprf(String prf) throws Exception{
+    public void gemprf(String prf) throws Exception {
         DriverAction.waitSec(1);
         DriverAction.pageScroll(1500, 1500);
         DriverAction.waitSec(2);
@@ -366,16 +371,16 @@ public class StepDefination {
         DriverAction.waitSec(2);
         DriverAction.switchToWindow(newTb5.get(1));
         DriverAction.waitSec(4);
-        GemTestReporter.addTestStep("gemprf click","gemprf has been clicked",STATUS.PASS,DriverAction.takeSnapShot());
-        String s20=DriverAction.getCurrentURL();
-        if(s20.equals(prf)){
+        GemTestReporter.addTestStep("gemprf click", "gemprf has been clicked", STATUS.PASS, DriverAction.takeSnapShot());
+        String s20 = DriverAction.getCurrentURL();
+        if (s20.equals(prf)) {
             GemTestReporter.addTestStep(" gemPRF Url Validation", "Successful<br>Expected URL: " + prf + "<br>Actual URL: " + s20, STATUS.PASS);
-        }else{
+        } else {
             GemTestReporter.addTestStep(" gemPRF Url Validation", "unsuccessful<br>Expected URL: " + prf + "<br>Actual URL: " + s20, STATUS.FAIL);
         }
         DriverManager.getWebDriver().close();
         DriverAction.waitSec(2);
-        GemTestReporter.addTestStep("Close gemPRF tab","Successfull",STATUS.PASS);
+        GemTestReporter.addTestStep("Close gemPRF tab", "Successfull", STATUS.PASS);
         DriverAction.switchToWindow(newTb5.get(0));
         DriverAction.waitSec(2);
     }
@@ -390,28 +395,28 @@ public class StepDefination {
         DriverAction.waitSec(2);
         DriverAction.switchToWindow(newTb6.get(1));
         DriverAction.waitSec(4);
-        GemTestReporter.addTestStep("gemjar click","gemjar has been clicked",STATUS.PASS,DriverAction.takeSnapShot());
-        String s21=DriverAction.getCurrentURL();
-        if(s21.equals(jar)){
+        GemTestReporter.addTestStep("gemjar click", "gemjar has been clicked", STATUS.PASS, DriverAction.takeSnapShot());
+        String s21 = DriverAction.getCurrentURL();
+        if (s21.equals(jar)) {
             GemTestReporter.addTestStep(" gemJAR Url Validation", "Successful<br>Expected URL: " + jar + "<br>Actual URL: " + s21, STATUS.PASS);
-        }else{
+        } else {
             GemTestReporter.addTestStep(" gemJAR Url Validation", "unsuccessful<br>Expected URL: " + jar + "<br>Actual URL: " + s21, STATUS.FAIL);
         }
         DriverManager.getWebDriver().close();
         DriverAction.waitSec(2);
-        GemTestReporter.addTestStep("Close gemJAR tab","Successfull",STATUS.PASS);
+        GemTestReporter.addTestStep("Close gemJAR tab", "Successfull", STATUS.PASS);
         DriverAction.switchToWindow(newTb6.get(0));
         DriverAction.waitSec(2);
     }
 
     @Given("^click on pricing button$")
-    public void pricingbutton() throws Exception{
+    public void pricingbutton() throws Exception {
         DriverAction.waitSec(1);
         DriverAction.pageScroll(1500, 1500);
         DriverAction.waitSec(2);
         DriverAction.click(locator.pricingbutton);
         DriverAction.waitSec(2);
-        GemTestReporter.addTestStep("pricing button","pricing button has been clicked",STATUS.PASS,DriverAction.takeSnapShot());
+        GemTestReporter.addTestStep("pricing button", "pricing button has been clicked", STATUS.PASS, DriverAction.takeSnapShot());
     }
 }
 

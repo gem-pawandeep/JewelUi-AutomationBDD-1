@@ -21,9 +21,9 @@ public class locator {
     public static By jewelink=By.xpath("//*[@src=\"/static/media/logo.67ff04482762962f73e1e6ad28de5771.svg\"]");
     public static By whatisjewel=By.xpath("//*[@class=\"headtext\"]");
     public static By aboutus=By.xpath("//*[@class=\"under\"]");
-    public static By content=By.xpath("//*[@class=\"underText text-center px-5 my-5 \"]");
+    public static By content=By.xpath("//*[@class=\"underText text-center px-5 my-5 mx-3\"]/b");
     public static By viewreport=By.xpath("//*[@id=\"root\"]/div[3]/div/div/div[1]/div[1]/div/div[1]/strong");
-    public static By viewreportcontent=By.xpath("//*[@class=\"whatisData mb-5 px-3\"]");
+    public static By viewreportcontent=By.xpath("(//*[@class=\"whatisData mb-5 px-3\"])[1]");
     public static By pricingcontent=By.xpath("//*[@class=\"paraText\"]");
     public static By jewelconetnt=By.xpath("//*[@id=\"root\"]/div[1]/div/div/div[1]/h6");
     public static By runtest=By.xpath("//*[@id=\"root\"]/div[3]/div/div/div[2]/div[2]/div/div[1]/strong");

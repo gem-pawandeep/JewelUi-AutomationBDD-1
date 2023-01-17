@@ -38,22 +38,22 @@ Feature: jeweldashboard
     Then validating about us <aboutus>
     Then validating content <content>
     Examples:
-      | whatisjewel     | aboutus  | content                                                                                                                                                                                                                                                                                                                                                                                |
-      | What Is Jewel ? | ABOUT US | Jewel is your one stop Dashboard to analyze and visualize data in a unique and efficient way. Analytical representation of data enables the user to visualize and provide insights into their test runs so that they can be optimized efficiently. Also, data comparisons can be easily achieved due to DB integrations with the dashboard which enhances the overall User experience. |
+      | whatisjewel     | aboutus  | content                                                                                                                                                                                                                                                        |
+      | What Is Jewel ? | ABOUT US | Jewel is a test management web solution that offers test suite creation using Gempyp and Gemjar, test execution with maximum parallelisation and load balancing along with live and analytical reporting for any framework that is integrated using Rest APIs. |
 
   Scenario Outline:validate the text in view report box
     Given validating view report <viewreport>
     Then validating view reportC <viewcontent>
     Examples:
-      | viewreport  | viewcontent                                                                                                                                                                        |
-      | View Report | Descriptive Reports can be generated and shared with stakeholders to make data comparisons easy. Users can also get easy access to previously generated reports for their records. |
+      | viewreport                        | viewcontent                                                                                                                               |
+      | JEWEL- End to End Test Management | Quickly Scalable and Easily Maintainable.Form-based codeless approach for API Automation & Data Validation.Testcase-Shareable but secure. |
 
   Scenario Outline:scroll down again and validate the text in run test suite box
     Given validating run test <runtest>
     Then validating run testC  <runcontent>
     Examples:
-      | runtest        | runcontent                                                                                                              |
-      | Run Test Suite | Users can generate their test suites and run them on various cloud machines leading to an easier automation experience. |
+      | runtest                  | runcontent                                                                                                                                                               |
+      | Create & Run Test Suites | One click runMutliple modes and use-casesCI CD CT ReadyAWS Lambda/Azure Functions- Unlimited Parallel ExecutionOpenness to support plugin with other apps scheduler. |
 
   Scenario Outline:clicking on facebook logo and validating url
     Given click on facebook logo validate url <facebook>

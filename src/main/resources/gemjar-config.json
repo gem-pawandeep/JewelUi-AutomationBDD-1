@@ -14,7 +14,7 @@
     "browserTimeout": 100
   },
   "beta": {
-    "browserName": "grid",
+    "browserName": "chrome",
     "launchUrl": "https://jewel.gemecosystem.com/",
     "browserTimeout": 100
   }
